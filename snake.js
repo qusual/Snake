@@ -1,6 +1,17 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
+const initialValues = {
+	score: 0,
+	headX: 10,
+	headY: 10,
+	tailLength: 2,
+	xVelocity: 0,
+	yVelocity: 0,
+	appleX: 5,
+	appleY: 5,
+}
+
 class SnakePart {
 	constructor(x, y) {
 		this.x = x;
@@ -76,6 +87,10 @@ function isGameOver() {
 
 		drawScoreEnd();
 		drawPlayAgain();
+		setTimeout(() => {
+			setInitialValues();
+			drawGame();
+		}, 2000);
 	}
 
 	return gameOver;
@@ -169,6 +184,19 @@ function keyDown(event) {
 	if (event.keyCode == 13) {
 		
 	}
+}
+
+function setInitialValues() {
+	score = initialValues.score;
+	headX = initialValues.headX;
+	headY = initialValues.headY;
+	tailLength = initialValues.tailLength;
+	xVelocity = initialValues.xVelocity;
+	yVelocity = initialValues.yVelocity;
+	appleX = initialValues.appleX;
+	appleY = initialValues.appleY;
+
+	snakeParts.splice(0, snakeParts.length);
 }
 
 drawGame();
