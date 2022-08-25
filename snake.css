@@ -1,0 +1,13 @@
+.game-name {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+canvas {
+	margin: auto;
+	margin-top: 20px;
+	display: flex;
+}
